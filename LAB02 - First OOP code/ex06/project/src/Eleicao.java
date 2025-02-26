@@ -34,22 +34,4 @@ public class Eleicao {
         }
     }
 
-    public int MaiorBens(){
-        int maior = 0;
-        for (int i = 0; i < candidatos.length; i++) {
-            if(candidatos[i].getTotalBens() > candidatos[maior].getTotalBens()){
-                maior = i;
-            }
-        }
-        return maior;
-    }
-
-    public double PercentualBens(Candidato c){
-        double somaBens = 0;
-        for (Candidato candidato: candidatos) {
-            somaBens += c.getTotalBens();
-        }
-        return  (c.getTotalBens()/somaBens)*100;
-    }
-
 }
