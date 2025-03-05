@@ -48,9 +48,8 @@ public class Produto {
     public void setPreco(double preco){
         this.preco = preco;
     }
-    public void setQuantidade(int quantidade){
-        this.quantidade = quantidade;
-    }
+    public void setQuantidade(int quantidade){this.quantidade = quantidade;}
+
 
     public void PrintProduto(){
         System.out.printf("\nNome: %s \nPreco: %f \nQuantidade: %d \n", nome, preco, quantidade);
