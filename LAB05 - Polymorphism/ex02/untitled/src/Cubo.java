@@ -2,8 +2,8 @@ public class Cubo extends FormaTridimensional{
 
     private double lado;
 
-    public Cubo(String descricao, double lado){
-        super(descricao);
+    public Cubo( double lado){
+        super("Cubo, formado por 6 quadrados.");
         this.lado = lado;
     }
 
@@ -13,5 +13,13 @@ public class Cubo extends FormaTridimensional{
 
     public double obterVolume(){
         return (lado * lado * lado);
+    }
+
+    public double getLado() {
+        return lado;
+    }
+
+    public void setLado(double lado) {
+        this.lado = lado;
     }
 }

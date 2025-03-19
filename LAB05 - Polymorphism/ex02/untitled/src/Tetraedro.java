@@ -1,14 +1,25 @@
 public class Tetraedro extends FormaTridimensional{
-    private double altura;
-    private double base;
+    private double lado;
 
-    public Tetraedro(String descricao, double altura, double base){
-        super(descricao);
-        this.altura = altura;
-        this.base = base;
+    public Tetraedro( double lado){
+        super("Tetraedro, formado por 4 triangulos");
+        this.lado = lado;
     }
 
     public double obterArea(){
-        return ((base * altura)/2);
+        return (lado*lado * Math.sqrt(3));
+    }
+
+    public double obterVolume(){
+        return (lado*lado*lado * (Math.sqrt(2)/12));
+    }
+
+
+    public double getLado() {
+        return lado;
+    }
+
+    public void setLado(double lado) {
+        this.lado = lado;
     }
 }
