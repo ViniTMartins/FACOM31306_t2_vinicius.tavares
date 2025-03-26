@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args){
         float limite;
         ContaCorrente conta;
+        UsaBanco usa = new UsaBanco();
 
         Scanner sc = new Scanner(System.in);
         limite = sc.nextFloat();
@@ -13,5 +14,7 @@ public class Main {
         else{
             conta = new ContaEspecial(sc.nextFloat(), sc.nextInt(), sc.nextInt(), limite);
         }
+
+        usa.simulacaoContas();
     }
 }
