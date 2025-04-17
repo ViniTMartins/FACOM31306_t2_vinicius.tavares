@@ -9,8 +9,8 @@ public class Main {
 
         LinkedList<Estudante> lista = new LinkedList<Estudante>();
         Stack<Estudante> pilha = new Stack<Estudante>();
+        ArrayDeque<Estudante> fila = new ArrayDeque<Estudante>();
         Random r = new Random();
-
 
         String[] nomes = {"Davi", "Bruno", "Isabelly", "Vinicius", "Tiago", "Gustavo", "Joao",
                 "Maria", "Miguel", "Cleber", "Catiana", "Walter", "Rafael", "Pedro", "Marcio",
@@ -99,5 +99,56 @@ public class Main {
         for(Estudante es : pilha){
             es.print();
         }
+
+        System.out.println(" \n\n\n --------------------------------------- \n\n\n");
+        System.out.println("Insercoes e remoções usando Deque:");
+
+        if(fila.offerLast(new EstudanteGraduacao("A","",""))){
+            System.out.println("Estudante Adicionado");
+        }
+        if(fila.offerLast(new EstudanteGraduacao("B","",""))){
+            System.out.println("Estudante Adicionado");
+        }
+        for(int i = 0; i < 10; i++){
+            try{
+                e = fila.removeFirst();
+            }catch (Exception ex){
+                System.out.println("Fila Vazia");
+                continue;
+            }
+            System.out.print("\n\nElemento removido: " );
+            e.print();
+        }
+
+        System.out.println(" \n\n\n --------------------------------------- \n\n\n");
+        System.out.println("Insercoes e remoções usando Deque:");
+
+
+        try{
+            fila.addLast(new EstudanteGraduacao("A","",""));
+        }catch (Exception ex){
+            System.out.println("Estudante nao pode ser adicionado");
+        }
+
+        try{
+           fila.addLast(new EstudanteGraduacao("B","",""));
+        }catch (Exception ex){
+            System.out.println("Estudante nao pode ser adicionado");
+        }
+        for(int i = 0; i < 10; i++){
+            e = fila.pollFirst();
+            if(e == null){
+                System.out.println("Fila Vazia");
+                continue;
+            }
+            System.out.print("\n\nElemento removido: " );
+            e.print();
+        }
+
+
+
+
+
+
     }
 }
